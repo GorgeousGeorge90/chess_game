@@ -1,0 +1,34 @@
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 64px;
+  cursor: pointer;
+}
+
+.black {
+  background-color: saddlebrown;
+}
+
+.white {
+  background-color: #FBE1CA;
+}
+
+.selected {
+  background-color: orangered;
+}
+
+.available {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.available_cell {
+  background-color: green;
+}
+
+

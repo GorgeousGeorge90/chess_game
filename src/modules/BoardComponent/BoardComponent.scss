@@ -1,0 +1,29 @@
+
+
+.board_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .board_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .board_table {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(64px * 8);
+      height: calc(64px * 8);
+      flex-wrap: wrap;
+      border: 1px solid black;
+
+      .board_table_cell {
+        display: flex;
+        height: 64px;
+        width: 64px;
+      }
+    }
+  }
+}
