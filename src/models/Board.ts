@@ -1,15 +1,18 @@
 import {Cell} from './Cell';
-import {Colors} from '../models';
+import {Colors} from '../types/types';
 import {Rook} from "./figures/Rook";
 import {Knight} from "./figures/Knight";
 import {Bishop} from "./figures/Bishop";
 import {Queen} from "./figures/Queen";
 import {King} from "./figures/King";
 import {Pawn} from "./figures/Pawn";
+import {Figure} from "./figures/Figure";
 
 
 export class Board {
     cells:Cell[][] = []
+    lostBlack:Figure[] = []
+    lostWhite:Figure[] = []
 
     public initBoard() {
         for ( let i = 0; i < 8; i++ ) {
@@ -30,6 +33,8 @@ export class Board {
     public getCopyBoard():Board {
         const newBoard = new Board()
         newBoard.cells = this.cells
+        newBoard.lostBlack = this.lostBlack
+        newBoard.lostWhite = this.lostWhite
         return newBoard
     }
 

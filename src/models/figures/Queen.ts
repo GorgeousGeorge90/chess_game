@@ -1,34 +1,30 @@
 import { Figure, FigureNames } from './Figure';
-import { Colors } from '../../models';
+import { Colors } from '../../types/types';
 import { Cell } from '../Cell';
-import black from '../../assets/img/black_knight.png';
-import white from '../../assets/img/white_knight.png';
+import black from '../../assets/img/black_queen.png';
+import white from '../../assets/img/white_queen.png';
 
-
-export class Knight extends Figure {
+export class Queen extends Figure {
 
     constructor(color: Colors, cell: Cell) {
         super(color, cell);
         this.logo = color === Colors.BLACK ? black: white;
-        this.name = FigureNames.KNIGHT
+        this.name = FigureNames.QUEEN
     }
 
     canMove(target: Cell): boolean {
         if(!super.canMove(target)) {
             return false;
         }
-
-        const dx = Math.abs(this.cell.x - target.x);
-        const dy = Math.abs(this.cell.y - target.y);
-
-        if ( dx === 1 && dy === 2 ) {
+        if (this.cell.isEmptyVertical(target)) {
             return true;
         }
-
-        if ( dx === 2 && dy === 1 ) {
+        if (this.cell.isEmptyHorizontal(target)) {
             return true;
         }
-
+        if (this.cell.isEmptyDiagonal(target)) {
+            return true;
+        }
         return false;
     }
 }

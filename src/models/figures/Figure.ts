@@ -1,4 +1,4 @@
-import { Colors } from "../../models";
+import { Colors } from "../../types/types";
 import { Cell}  from "../Cell";
 
 

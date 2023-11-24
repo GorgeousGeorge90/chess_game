@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Cell } from '../../classes';
+import { Cell } from '../../models';
 import './CellComponent.scss';
 
 type CellProps = {
