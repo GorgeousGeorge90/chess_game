@@ -41,10 +41,10 @@ export const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, 
         }
     }
 
-    return <div className="board_container">
-        <div className="board_content">
-            <h1>{ currentPlayer?.color } move!</h1>
-            <div className="board_table">
+    return <div className="board-container">
+        <div className="board-content">
+            <h1 className="board-title">{ currentPlayer?.color } player move!</h1>
+            <div className="board-table">
                 {
                     board.cells.map((row, i) =>
                         <Fragment key={i}>

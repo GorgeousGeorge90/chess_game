@@ -1,0 +1,36 @@
+@import "src/assets/styles/extends";
+
+.timer-container {
+  @extend %flex;
+  background-color: saddlebrown;
+  color:white;
+  border-radius: 8px;
+  font-weight: 400;
+
+  .timer-content {
+    @extend %flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    text-transform: capitalize;
+
+    .timer-buttons {
+      @extend %flex;
+      gap:10px;
+
+      button {
+        color: white;
+        background: darkslateblue;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        text-transform: capitalize;
+        cursor: pointer;
+
+        &:hover {
+          background-color: orangered;
+        }
+      }
+    }
+  }
+}

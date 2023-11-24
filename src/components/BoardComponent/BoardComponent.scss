@@ -1,31 +1,24 @@
+@import "src/assets/styles/extends";
 
+.board-container {
+  @extend %flex;
 
-.board_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .board_content {
-    display: flex;
+  .board-content {
+    @extend %flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap:10px;
 
-    .board_table {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .board-title {
+      text-transform: capitalize;
+      color: orangered;
+    }
+
+    .board-table {
+      @extend %flex;
       width: calc(64px * 8);
       height: calc(64px * 8);
       flex-wrap: wrap;
       border: 2px solid brown;
-
-      .board_table_cell {
-        display: flex;
-        height: 64px;
-        width: 64px;
-      }
     }
   }
 }
