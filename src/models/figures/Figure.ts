@@ -1,4 +1,4 @@
-import { Colors } from "../../types/types";
+import { Colors } from "../../types";
 import { Cell}  from "../Cell";
 
 
@@ -36,14 +36,8 @@ export class Figure {
             return false;
         }
 
-        if (target.figure?.name === FigureNames.KING ) {
-            return false;
-        }
-
         return true;
     }
 
-    moveFigure(target:Cell) {
-
-    }
+    moveFigure(target:Cell) {}
 }

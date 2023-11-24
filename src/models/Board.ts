@@ -1,5 +1,5 @@
 import {Cell} from './Cell';
-import {Colors} from '../types/types';
+import {Colors} from '../types';
 import {Rook} from "./figures/Rook";
 import {Knight} from "./figures/Knight";
 import {Bishop} from "./figures/Bishop";
@@ -13,6 +13,8 @@ export class Board {
     cells:Cell[][] = []
     lostBlack:Figure[] = []
     lostWhite:Figure[] = []
+    blackMate:boolean = false;
+    whiteMate:boolean = false;
 
     public initBoard() {
         for ( let i = 0; i < 8; i++ ) {
@@ -35,6 +37,8 @@ export class Board {
         newBoard.cells = this.cells
         newBoard.lostBlack = this.lostBlack
         newBoard.lostWhite = this.lostWhite
+        newBoard.whiteMate = this.whiteMate
+        newBoard.blackMate = this.blackMate
         return newBoard
     }
 
@@ -101,6 +105,14 @@ export class Board {
         this.addKnights()
         this.addKings()
         this.addQueens()
+    }
+
+    public getCheckMate(target:Cell) {
+        if ( target.figure?.color === Colors.WHITE ) {
+            this.whiteMate = true;
+        } else {
+            this.blackMate = true;
+        }
     }
 }
 

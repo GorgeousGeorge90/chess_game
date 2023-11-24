@@ -1,5 +1,5 @@
 import {Colors} from '../types/types';
-import {Figure} from './figures/Figure';
+import {Figure, FigureNames} from './figures/Figure';
 import {Board} from './Board';
 
 
@@ -97,7 +97,11 @@ export class Cell {
     moveFigure(target:Cell) {
         if (this.figure && this.figure?.canMove(target)) {
             this.figure.moveFigure(target);
+
             if (target.figure) {
+                if (target.figure.name === FigureNames.KING) {
+                    this.board.getCheckMate(target)
+                }
                 target.figure.color === Colors.WHITE ?
                     this.board.lostWhite.push(target.figure):
                     this.board.lostBlack.push(target.figure)

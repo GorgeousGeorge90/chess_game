@@ -2,7 +2,7 @@ import './App.scss';
 import {useEffect, useState} from "react";
 import {Board, Player} from "./models";
 import {BoardComponent} from "./components/BoardComponent";
-import {Colors} from "./types/types";
+import {Colors} from "./types";
 import {LostFigures} from "./components/LostFigures";
 import {Timer} from "./components/Timer ";
 
@@ -13,9 +13,10 @@ const App = () =>  {
     const [ blackPlayer, setBlackPlayer ] = useState<Player>(new Player(Colors.BLACK))
     const [ currentPlayer, setCurrentPlayer ] = useState<Player | null>(null)
 
-    useEffect(()=> {
+    useEffect(() => {
         restart()
     },[])
+
 
     const restart = () => {
         const newBoard = new Board()
